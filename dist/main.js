@@ -151,7 +151,6 @@ function toGradientMagnitude(xDerived, yDerived, width, height, lt = 0, ut = 0) 
             }
         }
     }
-    console.log("Norm L2: "+gradientMagnitude)
     const max = getMax(gradientMagnitude);
     const gradientMagnitudeCapped = gradientMagnitude.map(x => x / max);
     if (!ut && !lt) {
@@ -226,6 +225,7 @@ function toGradientMagnitude(xDerived, yDerived, width, height, lt = 0, ut = 0) 
         gradientMagnitudeCappedBottom = gradientMagnitudeUt.map(x => x <= ut ? 0 : x);
     }
     console.timeEnd('toGradientMagnitude');
+    console.log("Normalisasi L2: "+gradientMagnitude)
     return {
         data: gradientMagnitudeCappedBottom,
         threshold: {

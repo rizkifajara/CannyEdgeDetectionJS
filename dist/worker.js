@@ -28,7 +28,6 @@ function start() {
     console.log("dy: "+yDerived)
     self.postMessage({ type: 'yAxis', data: toPixels(toDenormalized(yDerived)) });
     const gradientMagnitude = toGradientMagnitude(xDerived, yDerived, self.appData.width, self.appData.height, self.appData.lt, self.appData.ut);
-    console.log("L2 norm: "+ JSON.stringify(gradientMagnitude))
     self.postMessage({
         type: 'gradientMagnitude',
         data: toPixels(toDenormalized(gradientMagnitude.data)),
